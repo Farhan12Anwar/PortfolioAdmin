@@ -12,7 +12,7 @@ const AdminDashboard = () => {
   }, []);
 
   const fetchImages = async () => {
-    const response = await axios.get("http://localhost:5001/api/images");
+    const response = await axios.get("https://portfolioadmin-wg36.onrender.com/api/images");
     setImages(response.data);
   };
 
@@ -22,13 +22,13 @@ const AdminDashboard = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await axios.post("http://localhost:5001/api/images", formData);
+    await axios.post("https://portfolioadmin-wg36.onrender.com/api/images", formData);
     fetchImages();
     setFormData({ title: "", url: "", price: "" });
   };
 
   const handleDelete = async (id) => {
-    await axios.delete(`http://localhost:5001/api/images/${id}`);
+    await axios.delete(`https://portfolioadmin-wg36.onrender.com/api/images/${id}`);
     fetchImages();
   };
 
